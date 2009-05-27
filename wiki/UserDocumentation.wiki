@@ -1,13 +1,13 @@
 User documentation for the protobuf-javame implementation.
 
 = Introduction =
-protobuf-javame is an implementation of the Google Protocol Buffers project that supports Java ME. The implementation is created to be compatible with the standard Google Protocol Buffer project. This means you can generate source code from the same proto-file with the standard implementation and the Java ME implementation and use them together. For example the Java ME version can be used in the client and the standard implementation is used at the server.
+protobuf-javame is an implementation of the Google Protocol Buffers project that supports Java ME. The implementation is created to be compatible with the standard Google Protocol Buffer project. This means you can generate source code from the same proto-file with the standard implementation and the Java ME implementation and use them together. For example the Java ME version can be used in the client and the standard implementation used at the server.
 
 The Java ME implementation is created to be small and lightweight. The architecture and design of the Java ME implementation is very different from the standard version. It does, however, use almost the same low level classes and business logic as the standard implementation for creating the actual output bytes. These classes have been adapted to the Java ME environment. Some of the features in the standard implementations have not been implemented in the Java ME version. This is done to make sure the implementation remains small and fast.
 
 Since this is still an early version the code will continue to be improved and updated. Please remember that APIs can change, since this is not a final version. This documentation is also a work in progress.
 
-If you are missing some features and maybe you even have an idea how they implemented, do not hesitate to send me an e-mail (hansjar at gmail dot com) and I am happy to discuss the issues with you.
+If you are missing some features and maybe you even have an idea how they can implemented, do not hesitate to send me an e-mail (hansjar at gmail dot com) and I am happy to discuss the issues with you.
 
 
 = Packages =

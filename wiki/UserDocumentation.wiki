@@ -12,8 +12,8 @@ If you are missing some features and maybe you even have an idea how they can be
 
 = Packages =
 The application consists of two jar files:
-#proto2javame-[version].jar, the code generator application. It takes two arguments. --java_out points to the directory where the generated code will be stored. The final argument is the location to the proto-file that will be use to generate the code
-#protobuf-javame-[version].jar, the library that must be added to your application. The generated code has dependencies to this library. The library should not be called directly from the application code, everything should be done through the generated Java-object.
+  #proto2javame-[version].jar, the code generator application. It takes two arguments. --java_out points to the directory where the generated code will be stored. The final argument is the location to the proto-file that will be use to generate the code
+  #protobuf-javame-[version].jar, the library that must be added to your application. The generated code has dependencies to this library. The library should not be called directly from the application code, everything should be done through the generated Java-object.
 
 
 = Features =

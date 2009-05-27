@@ -1,0 +1,63 @@
+User documentation for the protobuf-javame implementation.
+
+= Introduction =
+protobuf-javame is an implementation of the Google Protocol Buffers project that supports Java ME. The implementation is created to be compatible with the standard Google Protocol Buffer project. This means you can generate source code from the same proto-file with the standard implementation and the Java ME implementation and use them together. For example the Java ME version can be used in the client and the standard implementation is used at the server.
+
+The Java ME implementation is created to be small and lightweight. The architecture and design of the Java ME implementation is very different from the standard version. It does, however, use almost the same low level classes and business logic as the standard implementation for creating the actual output bytes. These classes have been adapted to the Java ME environment. Some of the features in the standard implementations have not been implemented in the Java ME version. This is done to make sure the implementation remains small and fast.
+
+Since this is still an early version the code will continue to be improved and updated. Please remember that APIs can change, since this is not a final version. This documentation is also a work in progress.
+
+If you are missing some features and maybe you even have an idea how they implemented, do not hesitate to send me an e-mail (hansjar at gmail dot com) and I am happy to discuss the issues with you.
+
+
+= Packages =
+The application consists of two jar files:
+#proto2javame-[version].jar, the code generator application. It takes two arguments. --java_out points to the directory where the generated code will be stored. The final argument is the location to the proto-file that will be use to generate the code
+#protobuf-javame-[version].jar, the library that must be added to your application. The generated code has dependencies to this library. The library should not be called directly from the application code, everything should be done through the generated Java-object.
+
+
+= Features =
+||*Proto type*||*Java type*||
+||string||String||
+||int32||int||
+||int64||long||
+||double||double||
+||float||float||
+||bool||boolean||
+||bytes||ByteString||
+_Supported data types_
+
+The project has its own code generator. This will create Java code that is meant to run on Java ME enabled mobile devices from proto-files. It supports the required, repeated and optional fields.
+
+*Required*
+Required means the field must be set before the object is sent across the network. The check if all required fields are added is not run before runtime.
+
+*Repeated*
+Repeated adds a list, meaning if you write “repeated string names = 1;” the code generated will contain a Vector that is called names. You can either add single element to the Vector object created by the generated class or send in your own list. There are no requirement that the list contains any elements before it is sent. 
+
+*Optional*
+Optional is a single field that does not have to be set before the object is sent. If it is not set the generated code will simply skip sending it.
+
+
+= Differences, standard implementation and Java ME =
+Since this project is created for Java ME it is naturally more limited than the Java SE version.  This section will point out the differences between the standard Google Protocol Buffer and the Java ME implementation. It will highlight the features that are available in the standard implementation, but not supported by the Java ME version.
+
+*Data types*
+
+*Nested messages*
+The Java ME implementation does not support nested messages. This means that a proto-file can only one message, if it contains more it will be ignored by the code generator. So, if you need more than one message, create on proto-file for each.
+
+*java_outer_classname*
+Because nested message-objects are not supported, the class name for the generated source code will always be the message name. There is no need for the java_outer_classname. If you include the java_outer_classname option in the proto-file this is simply ignored when generating the source code.
+
+*package*
+The package is not used and is, like the java_outer_class, ignored when generating code from the proto-file.
+
+= Example =
+
+
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages

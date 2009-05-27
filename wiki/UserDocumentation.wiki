@@ -9,13 +9,13 @@ Since this is still an early version the code will continue to be improved and u
 
 If you are missing some features and maybe you even have an idea how they can be implemented, do not hesitate to send me an e-mail (hansjar at gmail dot com) and I am happy to discuss the issues with you.
 
----
+----
 = Packages =
 The application consists of two jar files:
   # proto2javame-`[version]`.jar, the code generator application. It takes two arguments. --java_out points to the directory where the generated code will be stored. The final argument is the location to the proto-file that will be use to generate the code
   # protobuf-javame-`[version]`.jar, the library that must be added to your application. The generated code has dependencies to this library. The library should not be called directly from the application code, everything should be done through the generated Java-object.
 
----
+----
 = Features =
 ||-Proto type-||-Java type-||
 ||string||String||
@@ -35,7 +35,7 @@ The project has its own code generator. This will create Java code that is meant
 
 *Optional* is a single field that does not have to be set before the object is sent. If it is not set the generated code will simply skip sending it.
 
----
+----
 = Differences, standard implementation and Java ME =
 Since this project is created for Java ME it is naturally more limited than the Java SE version.  This section will point out the differences between the standard Google Protocol Buffer and the Java ME implementation. It will highlight the features that are available in the standard implementation, but not supported by the Java ME version.
 
@@ -50,5 +50,5 @@ Because nested message-objects are not supported, the class name for the generat
 *package*:
 The package is not used and is, like the java_outer_class, ignored when generating code from the proto-file.
 
----
+----
 = Example =

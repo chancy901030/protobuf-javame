@@ -17,7 +17,7 @@ The application consists of two jar files:
 
 
 = Features =
-||*Proto type*||*Java type*||
+||-Proto type-||-Java type-||
 ||string||String||
 ||int32||int||
 ||int64||long||

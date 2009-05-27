@@ -29,14 +29,11 @@ _Supported data types_
 
 The project has its own code generator. This will create Java code that is meant to run on Java ME enabled mobile devices from proto-files. It supports the required, repeated and optional fields.
 
-*Required*
-Required means the field must be set before the object is sent across the network. The check if all required fields are added is not run before runtime.
+*Required* means the field must be set before the object is sent across the network. The check if all required fields are added is not run before runtime.
 
-*Repeated*
-Repeated adds a list, meaning if you write “repeated string names = 1;” the code generated will contain a Vector that is called names. You can either add single element to the Vector object created by the generated class or send in your own list. There are no requirement that the list contains any elements before it is sent. 
+*Repeated* adds a list, meaning if you write “repeated string names = 1;” the code generated will contain a Vector that is called names. You can either add single element to the Vector object created by the generated class or send in your own list. There are no requirement that the list contains any elements before it is sent. 
 
-*Optional*
-Optional is a single field that does not have to be set before the object is sent. If it is not set the generated code will simply skip sending it.
+*Optional* is a single field that does not have to be set before the object is sent. If it is not set the generated code will simply skip sending it.
 
 
 = Differences, standard implementation and Java ME =

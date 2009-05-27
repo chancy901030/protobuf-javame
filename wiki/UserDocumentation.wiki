@@ -7,7 +7,7 @@ The Java ME implementation is created to be small and lightweight. The architect
 
 Since this is still an early version the code will continue to be improved and updated. Please remember that APIs can change, since this is not a final version. This documentation is also a work in progress.
 
-If you are missing some features and maybe you even have an idea how they can implemented, do not hesitate to send me an e-mail (hansjar at gmail dot com) and I am happy to discuss the issues with you.
+If you are missing some features and maybe you even have an idea how they can be implemented, do not hesitate to send me an e-mail (hansjar at gmail dot com) and I am happy to discuss the issues with you.
 
 
 = Packages =

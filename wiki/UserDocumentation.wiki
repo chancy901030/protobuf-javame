@@ -42,7 +42,7 @@ Since this project is created for Java ME it is naturally more limited than the 
 *Data types*
 
 *Nested messages*:
-The Java ME implementation does not support nested messages. This means that a proto-file can only one message, if it contains more it will be ignored by the code generator. So, if you need more than one message, create on proto-file for each.
+The Java ME implementation does not support nested messages. This means that a proto-file can only contain one message, if it contains more it will be ignored by the code generator. So, if you need more than one message, create on proto-file for each.
 
 *java_outer_classname*:
 Because nested message-objects are not supported, the class name for the generated source code will always be the message name. There is no need for the java_outer_classname. If you include the java_outer_classname option in the proto-file this is simply ignored when generating the source code.

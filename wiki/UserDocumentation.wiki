@@ -36,18 +36,18 @@ The project has its own code generator written completely in Java. This will gen
 <br/>
 ==Nested types==
 Version 1.0.0 added support for nested types. It is done in a slightly different way than the standard protobuf implementation. You need to include your nested types in the same proto-file.<br/><br/>*Example:*<br/>
-`package net.jarlehansen.protobuf.javame;
+`package net.jarlehansen.protobuf.javame;`
 
-option java_package = "net.jarlehansen.protobuf.javame.examples.generated";
-option java_outer_classname = "ExampleNestedObjectImpl";
+`option java_package = "net.jarlehansen.protobuf.javame.examples.generated";`
+`option java_outer_classname = "ExampleNestedObjectImpl";`
 
-message ExampleNestedObject {
-	required Number number = 1;
-}
+`message ExampleNestedObject {`
+	`required Number number = 1;`
+`}`
 
-message Number {
-	optional int32 id = 1;
-}`
+`message Number {`
+	`optional int32 id = 1;`
+`}`
 
 Each nested message will create its own class, it is not nested into one wrapper class like in the standard protobuf implementation. You can use all scopes on nested class (optional, required and repeated). 
 

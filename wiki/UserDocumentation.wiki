@@ -74,9 +74,12 @@ message ExampleEnumObject {
 }}}
 <br/>
 This will create the following code:<br/>
-`public static class Color {`
-		`public static int RED = 1;`
-		`public static int BLUE = 2;`
+{{{
+public static class Color {
+		public static int RED = 1;
+		public static int BLUE = 2;
+}}}
+
 <br/>
 Also generated is a method that makes it easy for you to get the name of the enum, in this case all I would have to do is `Color.getStringValue(Color.RED);'
 <br/>This will return "RED" as a String.

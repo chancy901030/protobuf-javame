@@ -81,7 +81,7 @@ public static class Color {
 }}}
 
 <br/>
-Also generated is a method that makes it easy for you to get the name of the enum, in this case all I would have to do is `Color.getStringValue(Color.RED);'
+Also generated is a method that makes it easy for you to get the name of the enum, in this case all I would have to do is `Color.getStringValue(Color.RED);`
 <br/>This will return "RED" as a String.
 
 ----

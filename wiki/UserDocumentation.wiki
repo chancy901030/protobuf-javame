@@ -83,6 +83,17 @@ public static class Color {
 <br/>
 Also generated is a method that makes it easy for you to get the name of the enum, in this case all I would have to do is `Color.getStringValue(Color.RED);`
 <br/>This will return "RED" as a String.
+==Unknown fields handling==
+There are cases where the proto-file is updated, but you still have to support older versions of the contract. In protobuf-javame it is possible to register an `UnknownTagHandler` to be able to register all received tags that are unknown. All you have to do is to register an Object implementing the `UnknownTagHandler` interface on your generated Java class, and your object will be called each time an unknown field is read.<br/>*UnknownTagHandler interface:*<br/>
+{{{
+public interface UnknownTagHandler {
+	public void unknownTag(final String unknownTag);
+}
+}}}
+<br/>setUnknownTagHandler method on the generated class:*<br/>
+{{{
+ExampleObject.setUnknownTagHandler(myUnknownTagHandler);
+}}}
 
 ----
 = Differences, standard implementation and Java ME =

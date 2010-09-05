@@ -36,7 +36,8 @@ The project has its own code generator written completely in Java. This will gen
 <br/>
 ==Nested types==
 Version 1.0.0 added support for nested types. It is done in a slightly different way than the standard protobuf implementation. You need to include your nested types in the same proto-file.<br/><br/>*Example:*<br/>
-{{{package net.jarlehansen.protobuf.javame;
+{{{
+package net.jarlehansen.protobuf.javame;
 
 option java_package = "net.jarlehansen.protobuf.javame.examples.generated";
 option java_outer_classname = "ExampleNestedObjectImpl";

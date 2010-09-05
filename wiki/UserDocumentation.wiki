@@ -101,3 +101,30 @@ The package is not used and is, like the java_outer_class, ignored when generati
 
 ----
 = Example =
+*Proto-file:*<br/>
+{{{
+package net.jarlehansen.protobuf.javame;
+
+option java_package = "net.jarlehansen.protobuf.javame.examples.generated";
+option java_outer_classname = "ExampleObjectImpl";
+
+message ExampleObject {
+	required int32 id = 1;
+	required string name = 2;
+	optional string address = 3;
+}
+}}}
+<br/>*Using the generated Java-class:*<br/>
+{{{
+public class SimpleExample {
+	public static void main(String[] main) throws IOException {
+		// Create a byte array from the ExampleObject instance
+		final ExampleObject exampleObject = ExampleObject.newBuilder().setId(241).setName("Jarle").setAddress("Oslo").build();
+		final byte[] data = exampleObject.toByteArray();
+		
+		// Transform the byte array back to a new ExampleObject instance with the same content
+		final ExampleObject exampleObject2 = ExampleObject.parseFrom(data);
+		System.out.println(exampleObject2.toString());
+	}
+}
+}}}

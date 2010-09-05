@@ -1,8 +1,6 @@
 = Quick start, protobuf-javame =
 
-1. [http://code.google.com/p/protobuf-javame/downloads/list]Download the latest version add the protobuf-javame.jar to your project.
-2. Use the proto2javame.jar to generate the source code from your proto-file.
+# [http://code.google.com/p/protobuf-javame/downloads/list]Download the latest version add the protobuf-javame.jar to your project.
+# Use the proto2javame.jar to generate the source code from your proto-file.
 command: 'java -jar proto2javame.jar --java_out=<generated-source-folder> <path to your proto-file>
-3. Use the generated builder object to read/write the populated object:
-'generatedObject.writeTo(...)
-'MyGeneratedObject generatedObject = MyGeneratedObject.parseFrom(...)
+# Use the generated builder object to read/write the populated object: 'generatedObject.writeTo(...) 'MyGeneratedObject generatedObject = MyGeneratedObject.parseFrom(...)

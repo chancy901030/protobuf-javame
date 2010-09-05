@@ -87,7 +87,7 @@ Since this project is created for Java ME it is naturally more limited than the 
 
 *Data types*
 
-*Nested messages*:
+*Import proto-file*:
 
 
 *java_outer_classname*:

@@ -33,9 +33,9 @@ The project has its own code generator written completely in Java. This will gen
 *Repeated* adds a list, meaning if you write “repeated string names = 1;” the code generated will contain a Vector that is called names. You can either add single element to the Vector object created by the generated class or send in your own list. There are no requirement that the list contains any elements before it is sent. 
 
 *Optional* is a single field that does not have to be set before the object is sent. If it is not set the generated code will simply skip sending it.
-
+<br/>
 ==Nested types==
-Version 1.0.0 added support for nested types. It is done in a slightly different way than the standard protobuf implementation. You need to include your nested types in the same proto-file.<br/>*Example:*<br/>
+Version 1.0.0 added support for nested types. It is done in a slightly different way than the standard protobuf implementation. You need to include your nested types in the same proto-file.<br/><br/>*Example:*<br/>
 `package net.jarlehansen.protobuf.javame;
 
 option java_package = "net.jarlehansen.protobuf.javame.examples.generated";

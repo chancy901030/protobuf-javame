@@ -57,20 +57,21 @@ Each nested message will create its own class, it is not nested into one wrapper
 ==Enum types==
 Also added in version 1.0.0 is support for enums. This is not Java 1.5 style enums since these are not supported by Java ME. The generated code will simply contain a inner class with the created enum that consists of static final int variables.
 <br/><br/>*Example:*<br/>
-`package net.jarlehansen.protobuf.javame;`
+{{{
+package net.jarlehansen.protobuf.javame;
 
-`option java_package = "net.jarlehansen.protobuf.javame.examples.generated";`
-`option java_outer_classname = "ExampleEnumObjectImpl";`
+option java_package = "net.jarlehansen.protobuf.javame.examples.generated";
+option java_outer_classname = "ExampleEnumObjectImpl";
 
-`message ExampleEnumObject {`
-	`enum Color {`
-		`RED = 1;`
-		`BLUE = 2;`
-	`}`
+message ExampleEnumObject {
+	enum Color {
+		`RED = 1;
+		`BLUE = 2;
+	}
 	
-	`repeated Color color = 1;`
-`}`
-
+	repeated Color color = 1;
+}
+}}}
 <br/>
 This will create the following code:<br/>
 `public static class Color {`

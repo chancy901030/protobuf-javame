@@ -1,13 +1,9 @@
-=NOT UPDATED FOR VERSION 1.0.0=
-
 User documentation for the protobuf-javame implementation.
 
 = Introduction =
 protobuf-javame is an implementation of the Google Protocol Buffers project that supports Java ME. The implementation is created to be compatible with the standard Google Protocol Buffer project. This means you can generate source code from the same proto-file with the standard implementation and the Java ME implementation and use them together. For example the Java ME version can be used in the client and the standard implementation used at the server.
 
 The Java ME implementation is created to be small and lightweight. The architecture and design of the Java ME implementation is very different from the standard version. It does, however, use almost the same low level classes and business logic as the standard implementation for creating the actual output bytes. These classes have been adapted to the Java ME environment. Some of the features in the standard implementations have not been implemented in the Java ME version. This is done to make sure the implementation remains small and fast.
-
-Since this is still an early version the code will continue to be improved and updated. Please remember that APIs can change, since this is not a final version. This documentation is also a work in progress.
 
 If you are missing some features and maybe you even have an idea how they can be implemented, do not hesitate to send me an e-mail (hansjar at gmail dot com) and I am happy to discuss the issues with you.
 
@@ -27,9 +23,10 @@ The application consists of two jar files:
 ||float||float||
 ||bool||boolean||
 ||bytes||ByteString||
+||enum||int||
 _Supported data types_
 
-The project has its own code generator. This will create Java code that is meant to run on Java ME enabled mobile devices from proto-files. It supports the required, repeated and optional fields.
+The project has its own code generator written completely in Java. This will generate Java code that is meant to run on Java ME enabled mobile devices from proto-files. All you have to do is download the proto2javame jar-file and run the following command to generate the source code: `java -jar proto2javame.jar --java_out=<generated source folder> <path to proto-file>`. It supports the required, repeated and optional fields.
 
 *Required* means the field must be set before the object is sent across the network. The check if all required fields are added is not run before runtime.
 

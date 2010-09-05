@@ -53,7 +53,7 @@ Each nested message will create its own class, it is not nested into one wrapper
 
 ==Enum types==
 Also added in version 1.0.0 is support for enums. This is not Java 1.5 style enums since these are not supported by Java ME. The generated code will simply contain a inner class with the created enum that consists of static final int variables.
-<br/><br/>*Example:*
+<br/><br/>*Example:*<br/>
 `package net.jarlehansen.protobuf.javame;`
 
 `option java_package = "net.jarlehansen.protobuf.javame.examples.generated";`

@@ -51,6 +51,31 @@ Version 1.0.0 added support for nested types. It is done in a slightly different
 
 Each nested message will create its own class, it is not nested into one wrapper class like in the standard protobuf implementation. You can use all scopes on nested class (optional, required and repeated). 
 
+==Enum types==
+Also added in version 1.0.0 is support for enums. This is not Java 1.5 style enums since these are not supported by Java ME. The generated code will simply contain a inner class with the created enum that consists of static final int variables.
+<br/><br/>*Example:*
+`package net.jarlehansen.protobuf.javame;`
+
+`option java_package = "net.jarlehansen.protobuf.javame.examples.generated";`
+`option java_outer_classname = "ExampleEnumObjectImpl";`
+
+`message ExampleEnumObject {`
+	`enum Color {`
+		`RED = 1;`
+		`BLUE = 2;`
+	`}`
+	
+	`repeated Color color = 1;`
+`}`
+
+<br/>
+This will create the following code:<br/>
+`public static class Color {`
+		`public static int RED = 1;`
+		`public static int BLUE = 2;`
+<br/>
+Also generated is a method that makes it easy for you to get the name of the enum, in this case all I would have to do is `Color.getStringValue(Color.RED);'
+<br/>This will return "RED" as a String.
 
 ----
 = Differences, standard implementation and Java ME =

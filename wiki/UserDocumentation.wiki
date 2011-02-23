@@ -56,13 +56,34 @@ Each nested message will create its own class, it is not nested into one wrapper
 <br/>
 ==Recursion==
 Supported in version 1.1.0
-<br/>*Example:*<br/>
+<br/><br/>*Example:*<br/>
 {{{
 message ProtoCategory{
     required int32 id = 1;
     required string name = 2;
     repeated ProtoCategory category = 3;
 }
+}}}
+
+Following is the generated code : 
+{{{
+case fieldNumberCategory:
+    Vector vcCategory = reader.readMessages(fieldNumberCategory);
+    for(int i = 0 ; i < vcCategory.size(); i++) {
+	byte[] eachBinData = (byte[]) vcCategory.elementAt(i);
+	ProtoCategory.Builder builderCategory = ProtoCategory.newBuilder();
+	InputReader innerInputReader = new InputReader(eachBinData, unknownTagHandler);
+	boolean boolCategory = true;
+	int nestedFieldCategory = -1;
+	while(boolCategory) {
+	    nestedFieldCategory = getNextFieldNumber(innerInputReader);
+	    boolCategory = ProtoCategory.populateBuilderWithField(innerInputReader, builderCategory, nestedFieldCategory);
+	}
+	eachBinData = null;
+	innerInputReader = null;
+        builder.addElementCategory(builderCategory.build());				       
+    }
+    ...
 }}}
 
 Note: Recursive field (eg. ProtoCategory ) should be put in the last position, otherwise serialization will be screwed up. 

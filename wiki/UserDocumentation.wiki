@@ -53,7 +53,7 @@ message Number {
 
 
 Each nested message will create its own class, it is not nested into one wrapper class like in the standard protobuf implementation. All nested classes will be generated in the same output folder with the same package-declaration. You can use all scopes on nested class (optional, required and repeated). 
-
+<br/>
 ==Recursion==
 Supported in version 1.1.0
 <br/>*Example:*<br/>

@@ -56,7 +56,7 @@ Each nested message will create its own class, it is not nested into one wrapper
 
 ==Recursion==
 Supported in version 1.1.0
-<br/><br/>*Example:*<br/>
+<br/>*Example:*<br/>
 {{{
 message ProtoCategory{
     required int32 id = 1;
@@ -65,7 +65,7 @@ message ProtoCategory{
 }
 }}}
 
-Note: Recursive field (eg. ProtoCategory) should be put in the last position, otherwise serialization will be screwed up. 
+Note: Recursive field (eg. ProtoCategory ) should be put in the last position, otherwise serialization will be screwed up. 
 
 ==Enum types==
 Also added in version 1.0.0 is support for enums. This is not Java 1.5 style enums since these are not supported by Java ME. The generated code will simply contain a inner class with the created enum that consists of static final int variables.

@@ -57,12 +57,13 @@ Each nested message will create its own class, it is not nested into one wrapper
 ==Recursion==
 Supported in version 1.1.0
 <br/><br/>*Example:*<br/>
-
+{{{
 message ProtoCategory{
     required int32 id = 1;
     required string name = 2;
     repeated ProtoCategory category = 3;
 }
+}}}
 
 Note: Recursive field (eg. ProtoCategory) should be put in the last position, otherwise serialization will be screwed up. 
 
